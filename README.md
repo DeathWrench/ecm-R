@@ -159,8 +159,8 @@ The current roadmap includes:
 
 - **Multiple Playlists** - Switch between different music folders dynamically within the game
 - **Advanced Context Filters** - More granular playback rules beyond FE/IG (events, game modes, etc.)
+- **In-Game Movie Handling** - Stop custom music during comic-style in-game cinematics before and after races
 - **Volume Normalization** - Automatic level equalization across all tracks
-- **Lip-Sync Synchronization** - Adjust audio synchronization for cutscenes and cinematics
 
 ## Notes
 
