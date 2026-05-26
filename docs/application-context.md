@@ -62,6 +62,7 @@ Key deployment constraints:
 - `bass.dll` is not bundled by the repository and must be obtained from the official BASS distribution.
 - ECM-R loads `bass.dll` dynamically from the same directory as the plugin module.
 - The active build target for NFSU2 is `Release | Win-x86`.
+- The runtime-facing startup guidance and the maintained documentation both assume deployment next to `ecm-r.x86.asi`.
 
 ## High-Level Architecture
 
@@ -352,6 +353,7 @@ The default way to open it is the `toggle_overlay` hotkey, which defaults to `F1
 The overlay currently provides:
 
 - an `Actions` menu for volume and playback control,
+- an `Experimental` menu for runtime-only feature flags,
 - a `Hotkeys` menu for runtime rebinding,
 - a `Playlist` menu that lists discovered track names,
 - an `About` menu with attribution and support links.
@@ -439,6 +441,7 @@ The generated configuration contains these sections:
 
 - `[core]`
 - `[config]`
+- `[experimental]`
 - `[keys]`
 - `[trax]`
 
@@ -476,6 +479,13 @@ The authoritative build flow is:
 
 The Premake workspace in `lua/windows.lua` defines the output naming and the post-build `.asi` copy step.
 
+Although the workspace exposes both `Win-x86` and `Win-x64` platforms, the current repository context is still x86-first:
+
+- the documented validation target is `Release | Win-x86`,
+- the active deployment filenames are `ecm-r.x86.asi` and `ecm-r.x86.ini`,
+- `settings::config_file` is still hardcoded to `ecm-r.x86.ini`,
+- the code comments still describe x64 as not yet ready for normal use.
+
 Expected output paths include:
 
 - `build/bin/Release-Win-x86/x86/ecm-r.x86.dll`
@@ -489,6 +499,7 @@ Expected output paths include:
 - The loading-screen option stops custom audio entirely instead of keeping a resumable pause token for that track.
 - Track routing is currently coarse-grained: `ALL`, `FE`, and `IG` only.
 - The overlay lists tracks but does not manage playlist metadata or `[trax]` assignments directly.
+- The `Experimental` overlay menu currently exposes only `ingame_movie_muting`, and that flag is also persisted in the `[experimental]` INI section.
 - Runtime filenames and deployment expectations are compatibility-sensitive.
 
 ## Source-of-Truth File Map for Future Changes

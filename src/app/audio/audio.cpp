@@ -404,7 +404,7 @@ void audio::init()
 		const std::string error_message = logger::va(
 			"Failed to load bass.dll.\n"
 			"%s\n"
-			"Make sure bass.dll is in the scripts folder next to ecm-r.dll.\n"
+			"Make sure bass.dll is in the scripts folder next to ecm-r.x86.asi.\n"
 			"See the mod README for where to get bass.dll and where to place it.\n"
 			"ECM-R music will be disabled for this session.",
 			bass_api::last_error().c_str());

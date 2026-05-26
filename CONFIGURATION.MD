@@ -4,6 +4,8 @@
 
 ECM-R creates `ecm-r.x86.ini` automatically on first launch.
 
+The current maintained runtime for this fork is `ecm-r.x86.asi`, and the configuration file is expected to live next to it as `ecm-r.x86.ini`.
+
 Default configuration:
 
 ```ini

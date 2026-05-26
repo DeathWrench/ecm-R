@@ -60,4 +60,4 @@
 - Eliminate compile-time references to BASS (`bass.h`, `bass.lib`, `deps/bass`).
 - Maintain BASS only as an official runtime dependency downloaded externally.
 - Keep in mind that BASS is an official runtime dependency only; do not introduce repository-managed BASS SDK binaries or unofficial redistribution flows.
-- The expected deployment of the mod places `ecm-r` and `bass.dll` together within the `scripts` folder (e.g., `scripts/ecm-r.dll`, `scripts/ecm-r.ini`, `scripts/bass.dll`).
+- The expected deployment of the mod places the ECM-R runtime and `bass.dll` together within the `scripts` folder (e.g., `scripts/ecm-r.x86.asi`, `scripts/ecm-r.x86.ini`, `scripts/bass.dll`).

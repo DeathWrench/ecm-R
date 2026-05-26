@@ -10,6 +10,8 @@ It also includes an in-game overlay for playback control and runtime hotkey rebi
 
 This fork is currently focused on **Need for Speed: Underground 2 (NFSU2)**.
 
+The maintained runtime for this fork is currently the **Win-x86** build, deployed as `ecm-r.x86.asi` with `ecm-r.x86.ini` and `bass.dll` beside it.
+
 ## Quick Start
 
 1. Download the official `bass.dll` runtime from https://www.un4seen.com/.

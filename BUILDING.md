@@ -5,7 +5,9 @@
 This repository does **not** build the ECM-R game plugin through CMake.
 The `.asi` module is generated from a Premake script located at `lua/windows.lua`, and project files are created with `generate.bat`.
 
-For **Need for Speed: Underground 2**, the relevant target is the **32-bit** build.
+For **Need for Speed: Underground 2**, the relevant and maintained target is the **32-bit** build.
+
+The generated workspace may expose additional platforms such as `Win-x64`, but repository validation, deployment guidance, and runtime naming are currently centered on `Release | Win-x86`.
 
 ## Requirements
 
