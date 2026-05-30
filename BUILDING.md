@@ -85,6 +85,8 @@ This project loads the native BASS runtime dynamically, and `bass.dll` is requir
 
 - https://www.un4seen.com/
 
+On the Un4seen website, open the `BASS` page, download the Windows 32-bit (Win32) ZIP package, and copy the `bass.dll` file from the root of that ZIP into the same folder as the ECM-R runtime files.
+
 The current runtime integration has been tested with BASS `v2.4.18.11`.
 ECM-R does not bundle or redistribute `bass.dll`; users must obtain the official runtime themselves.
 BASS remains subject to the official BASS license terms, and commercial usage may require a separate licence.
@@ -106,7 +108,7 @@ For a typical setup, this means placing:
 - `ecm-r.x86.ini`
 - `bass.dll` obtained from the official BASS website
 
-inside the mod loader's expected `scripts` directory, with `bass.dll` placed next to the ECM-R runtime files.
+inside the mod loader's expected `scripts` directory, with `bass.dll` placed next to the ECM-R runtime files. Use the `bass.dll` found in the root of the official Windows 32-bit BASS ZIP package from the `BASS` page on https://www.un4seen.com/.
 
 Then create a `Music` folder in the expected mod location and place the audio files there.
 

@@ -14,13 +14,14 @@ The maintained runtime for this fork is currently the **Win-x86** build, deploye
 
 ## Quick Start
 
-1. Download the official `bass.dll` runtime from https://www.un4seen.com/.
-2. Extract ECM-R runtime files into the game's `scripts` folder:
+1. Download the official Windows 32-bit BASS ZIP package from the `BASS` page on https://www.un4seen.com/.
+2. Copy `bass.dll` from the root of the downloaded ZIP.
+3. Extract ECM-R runtime files into the game's `scripts` folder:
    - `ecm-r.x86.asi`
    - `ecm-r.x86.ini` (ECM-R creates it automatically on first launch)
    - `bass.dll`
-3. Create a `Music` folder next to those runtime files and place your supported audio files inside.
-4. Launch the game, wait for the first startup music banner to finish, and then open the overlay with `F11`.
+4. Create a `Music` folder next to those runtime files and place your supported audio files inside.
+5. Launch the game, wait for the first startup music banner to finish, and then open the overlay with `F11`.
 
 ECM-R supports separate `frontend_volume` and `ingame_volume` settings. Legacy `volume` configurations automatically use it as fallback when context-specific values are missing.
 
@@ -72,12 +73,13 @@ Game Folder/
 ```
 
 ECM-R loads the official BASS runtime dynamically, so `bass.dll` must be present next to the ECM-R runtime files.
+Download the official Windows 32-bit BASS ZIP package from the `BASS` page on https://www.un4seen.com/ and copy `bass.dll` from the root of that ZIP.
 
 ## Installation
 
 Before installing, ensure you have:
 
-1. Downloaded the official `bass.dll` runtime from https://www.un4seen.com/
+1. Downloaded the official Windows 32-bit BASS ZIP package from the `BASS` page on https://www.un4seen.com/ and copied `bass.dll` from the root of that ZIP
 2. Obtained the ECM-R runtime files:
    - `ecm-r.x86.asi`
    - `ecm-r.x86.ini` (created automatically on first launch if missing)
@@ -155,7 +157,7 @@ The current roadmap includes:
 
 ## Notes
 
-- `bass.dll` must be the official BASS runtime placed next to the ECM-R runtime files. The current runtime integration has been tested with BASS `v2.4.18.11`. Avoid unofficial, modified, or repackaged builds.
+- `bass.dll` must be the official BASS runtime placed next to the ECM-R runtime files. Download the Windows 32-bit ZIP package from the `BASS` page on https://www.un4seen.com/ and copy the `bass.dll` that is stored in the root of the ZIP. The current runtime integration has been tested with BASS `v2.4.18.11`. Avoid unofficial, modified, or repackaged builds.
 - If `bass.dll` is missing, incorrect version, or cannot be loaded, audio playback will fail. ECM-R shows Windows error text and the exact path it tried in the startup popup.
 - BASS is a third-party library subject to the official BASS license terms. ECM-R does not bundle or redistribute `bass.dll`; users must obtain the official runtime themselves.
 - If your usage becomes commercial, review the official BASS licensing terms and obtain any required license before distribution. ECM-R is maintained as a non-commercial fork project.
