@@ -481,6 +481,23 @@ static void GetExtraTags(
 	);
 }
 
+// Safe sanitization for chyron display
+static std::string SanitizeForDisplay(const std::string& input)
+{
+	std::string result;
+	result.reserve(input.length() + 10);
+
+	for (char c : input)
+	{
+		if (c == '$')
+			result += "S";           // Replace $ with S to avoid bugs, $$ kind of works except title will be cut off after the $ For Example: "T.I. Presents The P$" when it should be "T.I. Presents The P$C feat. Young Dro" now it's "T.I. Presents The PSC feat. Young Dro"
+		else if (c == '%')
+			result += "%%";
+		else
+			result += c;
+	}
+	return result;
+}
 
 void play_file(const char* file, int channel)
 {
@@ -610,7 +627,11 @@ void play_file(const char* file, int channel)
 		logger::trim(title);
 		logger::trim(artist);
 	}
-
+	
+	// Final sanitization for chyron
+	title = SanitizeForDisplay(title);
+	artist = SanitizeForDisplay(artist);
+	album = SanitizeForDisplay(album);
 
 	audio::currently_playing.title = title;
 	audio::currently_playing.artist = artist;
